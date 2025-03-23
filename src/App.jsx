@@ -107,15 +107,20 @@ function App() {
             </div>
           </section>
           
-          <section id = "future-section">
-            <div>  </div>
+          <section id = "future-section" className='grid grid-cols-2 gap-2'>
+
+            <div className='w-full'>  
+              <img src = "/future-img.PNG"  alt = "future" />
+            </div>
+
             <div>
-                <div> Now is your moment to build a better tomorrow </div>
-                <div> We've seen what the future can be . Now it's time to decide what it will be </div>
-                <div>
-                    <button> WATCH VIDEO </button>
+                <div className='font-bold text-3xl'> Now is your moment to build a better tomorrow </div>
+                <div className='text-[16px] py-2'> We've seen what the future can be . Now it's time to decide what it will be </div>
+                <div className='py-2'>
+                    <button className='border-2 rounded-[3px] text-[#944c9e] font-semibold px-4 py-2'> WATCH VIDEO </button>
                 </div>
             </div>
+
           </section>
 
           <section id = "toast-section">
