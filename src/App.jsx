@@ -3,10 +3,22 @@ import { ArrowRight, ChevronDown, Eye, FileText, Hash, Lightbulb, PartyPopper, P
 
 function App() {
 
+  const AllLogos = [
+    { id : 1 , image : "/fox.png"   , alt : "fox-image"  , width : "w-20"},
+    { id : 1 , image :  "/lonely-planet-1.png"    , alt : "lonely-planet" },
+    { id : 3 , image : "/intuit-1.png"  , alt : "intuit" },
+    { id : 4 , image :  "/carvana-1.png"  , alt : "carvana" },
+    { id : 5 , image : "/kiva_logo-1.png"   , alt : "kiva_logo"  , width : "w-20" },
+    { id : 6 , image : "/red-taget-1.png"  , alt : "red-target" , width : "w-20" },
+    { id : 7 , image :  "/Deva_curl-1.png"  , alt : "deva_curl" },
+  ]
+
+
   return (
     <div  className ='bg-[#f4f0e6]'>
 
         <div className='mx-48'>
+
           <section id = "header" className='grid grid-cols-2 gap-[10px] py-4  items-center '>
 
             <div className='grid grid-cols-5 gap-[10px] text-[14px]  font-semibold'> 
@@ -34,23 +46,37 @@ function App() {
 
           </section>
 
-          <section id = "add-popup">
-            <span> Slack is your digital HQ. Meet the new features keeping teams connected in a work-from-anywhere world 
-              <span> Let's go  <ArrowRight  /> </span>
-              <span> <X /> </span>
-            </span>
+          <section id = "add-popup" className='text-[13px] grid grid-cols-[6fr_0.5fr] gap-[10px] text-white bg-[#2a74d4] p-4 rounded-4xl '>
+            <div  className='flex flex-row'>
+                <div> Slack is your digital HQ. Meet the new features keeping teams connected in a work-from-anywhere world . 
+                </div>
+                <div className='flex flex-row'>
+                   <div> Let's go </div>
+                   <div >
+                      <a href="/" target="_blank" >  <ArrowRight  /> </a>
+                   </div>
+                </div>
+            </div>
+            <div> <X /> </div>
           </section>
 
-          <section id = "mainsection">
+          <section id = "mainsection" className='p-2 my-4 grid grid-cols-2 gap-16'>
             <div>
-              <div> Slack is where the future works </div>
-              <div> Transform the way you work with one place for everyone and everything you need to get stuff done </div>
-              <div>
-                <button> TRY FOR FREE </button>
-                <button> SIGN UP WITH GOOGLE </button>
+              <div className='text-4xl font-bold'> Slack is where the future works </div>
+              <div className='text-[15px] my-4'> Transform the way you work with one place for everyone and everything you need to get stuff done </div>
+              <div className='grid grid-cols-[2.5fr_4fr] gap-2'>
+                <button className='bg-[#6d3475] p-2 py-3 text-xs text-white rounded-[3px] '> TRY FOR FREE </button>
+
+                <button className='bg-[#2a74d4] rounded-[3px] py-1 px-1 grid grid-cols-[0.5fr_3fr] gap-2 text-xs items-center text-white'> 
+                  <div className='w-[32px] h-6'>
+                     <img src = "/google-g-logo.png" className='h-7'  alt = "google-logo" />
+                  </div>
+                  SIGN UP WITH GOOGLE </button>
+
               </div>
             </div>
-              <div>
+
+            <div>
                 <div>
                   <div> 3 </div> 
                   <div>  <ChevronDown  /> Channels <Plus  /> </div>
@@ -66,11 +92,19 @@ function App() {
                         <Eye  />
                   </div>
                 </div>
-              </div>
+            </div>
           </section>
 
           <section id = "logo-section">
-
+            <div className='grid grid-cols-7 gap-4 items-center '>
+               {AllLogos?.map(i => {
+                return (
+                  <div key = {i?.id} className = {` ${i?.width ? i?.width : "w-30" } `}>
+                      <img src = {i?.image} alt = {i?.alt} />
+                  </div>
+                )
+               })}
+            </div>
           </section>
           
           <section id = "future-section">
